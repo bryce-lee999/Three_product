@@ -88,7 +88,6 @@
 		<artifactId>spring-test</artifactId>
 		<version>${spring.version}</version>
 		<!-- 表示开发的时候引入 发布的时候不会加载此包 -->
-		<scope>test</scope>
 	</dependency>
 
 	<!-- spring-web -->

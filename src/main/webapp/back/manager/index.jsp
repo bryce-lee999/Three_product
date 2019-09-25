@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/common.css">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="shortcut icon" href="../../images/logo.png" type="img/x-icon" />
+<link rel="shortcut icon" href="../../back/images/Logo.gif" type="img/x-icon" />
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.SuperSlide.js"></script>
 <script type="text/javascript">
@@ -77,7 +77,7 @@
         <div id="logo" class="fl"></div>
         <div id="photo_info" class="fr">
             <div id="photo" class="fl">
-                <a href="#"><img src="../../images/copylogo.png" alt="源辰信息" width="60" height="60"></a>
+                <a href="#"></a>
             </div>
             <div id="base_info" class="fr">
                 <div class="help_info">
@@ -101,15 +101,15 @@
     <div class="sideMenu" id="sideMenu" style="margin:0 auto">
         <h3>用户信息</h3>
         <ul>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/admin.html')">添加管理员</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/view_admin.html')">管理员信息</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/user.html')">会员信息</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'admin.html')">添加管理员</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'view_admin.html')">管理员信息</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'user.html')">会员信息</a></li>
         </ul>
         <h3>商品信息</h3>
         <ul>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/type.html')">商品类型管理</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/goods.html')">商品信息管理</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/view.html')">商品信息浏览</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'type.html')">商品类型管理</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'goods.html')">商品信息管理</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'view.html')">商品信息浏览</a></li>
         </ul>
         <h3>个人中信息</h3>
         <ul>
@@ -119,7 +119,7 @@
     </div>
 </div>
 <div class="main">
-    <iframe name="right" id="rightMain" src="page/welcome.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+    <iframe name="right" id="rightMain" src="welcome.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
 </div>
 <div class="bottom">
     <div id="bottom_bg"><a class="copy" href="http://www.hyycinfo.com">源辰信息科技有限公司</a>&copy;版权所有 0734-8355998</div>

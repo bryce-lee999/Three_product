@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* common */
+.container{width: 1200px; margin:0 auto;}
+.clearfix {zoom:1;}
+.clearfix::after,.clearfix:before{display:table; content:'';}
+.clearfix::after{clear:both;}
+.iconfont{vertical-align: middle;}
+.fl {float: left;}
+.fr {float: right;}
+
+/* header */
+.top{width:100%; min-width:1200px; height:34px; line-height:34px; background-color:#F9F9F9; color:#646464; font-size:12px; border-bottom: 1px solid #f2f2f2; font-family:arial,simsun;}
+.top-left{float:left; padding:0 22px 0 9px;}
+.top-right{float:right; }
+.top-right a{color:#646464;}
+.top-right a:hover{color:#FE2832;}
+.top-right > li{float:left; }
+.top-right .line{padding:0 7px; border-right:1px solid #e6e6e6;}
+.top-right li:last-child > a{border-right:0;}
+
+/* LOGO */
+.logo-line{position:relative;overflow:hidden;width:100%;height:100px;}
+
+/* Search */
+.search-box {position: absolute;top: 0;left: 362px;}
+.search-top{width:560px; height:36px; margin-top:20px; line-height:36px; background:#fff; border:2px solid #FF2832;}
+.search{box-sizing:border-box; width:404px; height:100%; padding:9px 0 9px 10px; font-size:12px;}
+.search-option{display:inline-block; width:92px; height:100%; padding-left:16px; color:#9A9A9A; background-color:#f7f7f7;}
+.search-option .iconfont{float:right; padding-right:7px;}
+.search-btn{overflow:hidden; width:48px; height:36px; text-align:center; font-size:26px; color:#fff; background-color:#FF2832;}
+.banner-activity .cover {display:none\9;}
+.search-bottom li{float:left;}
+.search-line {margin:8px 10px 0 0; font-size:12px; color:#969696;}
+.search-line:last-child{margin-right: 0;}
+/* IE hack 6 7 */
+.search-option .iconfont{+float:none; +padding-right:7px;}
+.search-btn{+float: right;+width:38px;+height:36px;}
+
+/* shop-button */
+.shop-btn {position:absolute; top:0; right:0; margin-top:20px;font-size:0;}
+.shop-btn > a{display:inline-block; height:36px; line-height:36px; text-align:center; font:14px/36px "Microsoft Yahei"; border:2px solid #DCDCDC;}
+.shop-btn > .shoporder{border-left:0;}
+.shop-btn > .shopcart{border-color:#FF2832;}
+.shopcart {width:107px; color:#fff; background-color:#FF2832;}
+.shopcart:hover {color:#646464; background-color:#F6F6F6; border-color:#DCDCDC;}
+.shopcart > .iconfont {padding-right:7px; font-size:20px;}
+.shoporder{width:86px; color:#646464; background-color:#F6F6F6;}
+.shoporder:hover{color:#FF2832;}
+
+/* nav */
+.nav-box {width: 100%;min-width:1200px;height: 40px;line-height: 40px;border-bottom: 3px solid #ff2832;}
+.nav-line {position:relative; float: left; padding: 0 15px; color:#323232; font:14px/40px "Microsoft Yahei"; font-weight: bold;}
+.nav-box a:hover { color:#FF2832; }
+.nav-all {position:relative;width:155px; padding: 0 25px 0 20px; margin-right: 17px; color:#fff; background-color:#FF2832; }
+.nav-all a:hover {color: #fff}
+.nav-all .iconfont{position:absolute; top:0; right:24px; font-size:20px;}
+.icon-hot{position:absolute; top:0; left:8px; font-size: 0;}
+
+/* content */
+.content-box {min-width:1200px; height:490px; background-image:url(../img/bg.png); background-repeat:no-repeat; background-position:center top;}
+.content {position:relative; height:100%; overflow:hidden;background-color:#fff;}
+
+/* content-left */
+.content-left {width:200px; height:100%; background:#FAFAFA; padding-top:5px; }
+.content-left > li { height:30px; padding-left:18px; color:#323232; font:14px/30px "Microsoft Yahei";}
+.content-left > li:hover {height:26px; padding-left:16px; color:#ff2832; font:16px/30px "Microsoft Yahei"; border:2px solid #ff2832; border-right:2px solid white;}
+
+/* content-right */
+.content-right {width:200px; height:100%; overflow:hidden;}
+.content-right>div{width:100%;}
+.content-right-ad {max-height:195px;}
+.content-right-notice {height:165px; color:#646464;}
+.notice-btn{float:left; width:50%; line-height:29px; text-align:center; font:14px/29px "Microsoft Yahei"; color:#646464; cursor:default; background-color:#F0F0F0;}
+.notice-btn.active{background-color:#fff;}
+.notice-line {width:170px; padding:0 15px 0 15px; font-size:12px; line-height:25px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pop-img {width: 200px;}
+
+/* content-center */
+.content-center {position:relative; height:100%; background:#fefefe; overflow:hidden;}
+/* banner */
+.banner-wrapper{position:relative; width:100%; height:330px;}
+.banner{position:absolute; top:0; left:0; width:4000px; height:330px; overflow:hidden;}
+.banner-img{float:left; width:800px; height:330px;}
+.banner-btn {cursor: pointer;}
+.banner-btn .pre{position: absolute; top:130px; left:0; width: 33px; height: 70px; background: url(../img/home_sprite_1507.png) no-repeat 0 -70px; background-color: #000; opacity: 0.3;}
+.banner-btn .next{position: absolute; top:130px; right:0; width: 33px; height: 70px; background: url(../img/home_sprite_1507.png) no-repeat -33px -70px; background-color:#000; opacity: 0.3;}
+.banner-btn > a:hover {opacity: 0.5}
+
+.banner-option{position:absolute; bottom:6px; left:350px;}
+.banner-option >li {float:left; width:20px; height:20px; margin-right:6px; line-height:20px; text-align:center; color:#fff; font:12px/20px Arial; background-color:#646464; border-radius:50%; cursor: default;}
+.banner-option > li.active{background-color:#ff2832}
+.banner-activity{width:100%; height:163px;}
+.banner-activity li {position:relative; float:left; border:1px solid #e6e6e6;}
+.banner-activity .cover {display:block; width:198px; height:160px; background-color:#000; position:absolute; left:0; top:0; opacity:0.04;}
+/* IE-hack 7,8,9,10 */
+.banner-activity .cover {display:none\9;}
+
+/* sell-box */
+.sell-box{width: 100%;min-width:1200px; margin:30px 0;}
+/* IE-hack 7 8 9 10*/
+.sell-box{height:500px\9;}
+
+.sell-left{width: 915px; height: 500px;}
+.sell-head{width: 100%; height:44px; line-height: 44px; border-bottom: 2px solid #000;}
+.sell-head h1{float:left; display:inline-block; color:#323232; font:bold 20px/44px "Microsoft YaHei";}
+.sell-head h1>a:hover{color:#ff2832;}
+.sell-head-option>li{float:left; width:113px; height:42px; text-align:center; color:#646464; background-color:#F5F5F5; font: 14px/42px "Microsoft YaHei"; border:1px solid #e6e6e6; border-left:none; cursor:default;}
+.sell-head-option>li:first-child { border-left:1px solid #e6e6e6; }
+.sell-head-option>li.active { font-weight: bold; color:#525252; background-color:#fff; border: 2px solid #000; border-bottom: 2px solid #fff; }
+
+.sell-content{height: 440px; margin-top:10px;}
+.sell-content-bookstyle{position:relative; overflow: hidden; width:238px; height:441px; border:1px solid #e6e6e6;}
+.sell-content-bookstyle-group{position:absolute; bottom:0; width:237px; padding-left:1px; background-color:#fff;}
+.sell-content-bookstyle-group>li{float:left; width:33.3%; text-align:center;}
+.sell-content-bookstyle-group a{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#323232; font:12px/28px "Microsoft YaHei";}
+
+.sell-content-pop{ width: 675px; line-height: 16px; font-size: 12px;color: #666; font-family: 'Microsoft YaHei';}
+.sell-content-pop>li{float:left; overflow:hidden; box-sizing: border-box; width:25%; height:220px; padding-top:10px; text-align:center; border:1px solid #e6e6e6;}
+.sell-content-pop>li a:hover {color: #ff2832;}
+.sell-content-pop>.sell-content-pop-banner{overflow:hidden; width:50%; padding-top:0;}
+.sell-content-pop .price{ font: 14px Arial; color: #ff2832;}
+/* IE-hack 6 7*/
+.sell-content-pop>li{+width:24.5%;}
+.sell-content-pop>.sell-content-pop-banner{+width:49%;}
+
+
+.sell-rank{width:280px;height:494px; border:1px solid #e6e6e6; font-family:"Microsoft YaHei"; font-size:12px;}
+.sell-rank > li{width:280px; height:44px; line-height:44px;  overflow: hidden; text-overflow:ellipsis; white-space:nowrap;}
+.sell-rank a{padding:0 10px;  color:#646464;}
+.sell-rank a:hover{text-decoration: underline; color:#FE2832}
+.sell-rank .rank{padding:0 10px; color:#646464;} 
+.sell-rank .rank-top{padding:0 10px; color:#FE2832} 
+.sell-rank .sell-rank-btn{width:139px; height:46px; line-height:46px; padding:0; text-align:center; background-color: #f5f5f5; cursor: default; color:#666; font:16px/46px "Microsoft YaHei",Simsun; border-right:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6;}
+.sell-rank-btn a:hover{text-decoration: underline; color:#646464;}
+.sell-rank-btn.active{background-color:#fff; border-bottom:1px solid #fff;}
+
+/* footer */
+.footer-box {min-width:1200px; height:100px; background:#fafafa; border-top:2px solid #ff2832; margin-top:15px;}
+.footer-top{width:960px; height:100px; margin:0 auto; background-color:#fafafa; border-bottom:1px solid #ebebeb;}
+.footer-top-icon {float:left; display:block; width:138px; height:52px; margin-top:20px; margin-right:102px; font-size:0; line-height:0; cursor:pointer;}
+.footer-top-icon.icon1 {background:url(../img/footer_bg.png) 0 0 no-repeat;}
+.footer-top-icon.icon2 {background:url(../img/footer_bg.png) 0 -52px no-repeat;}
+.footer-top-icon.icon3 {background:url(../img/footer_bg.png) 0 -104px no-repeat;}
+.footer-top-icon.icon4 {background:url(../img/footer_bg.png) 0 -156px no-repeat;}
+.footer-bottom{width:960px;  margin:0 auto;  padding:17px;  text-align:center;  color:#8c8c8c;  font-size:12px;}
+.footer-bottom-option{padding-bottom:17px;}
+.footer-bottom-option a:hover{color:#ff2832;}
+.divide{margin:0 17px 0 19px;}
+.footer-bottom-desc p{line-height: 20px;}

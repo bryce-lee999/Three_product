@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	function checkLogin() {
-		alert('...')
+		//alert('...')
 		var account = $.trim($("#account").val());
 		var pwd = $.trim($("#pwd").val());
 
@@ -21,7 +21,8 @@
 			return;
 		}
 		//发送ajax请求
-		$.post("login",{aname:account,pwd:pwd},function(data){
+		//注意发送请求得到路径http://localhost:8080/product/admin/login
+		$.post("../admin/login",{coname:account,copwd:pwd},function(data){
 			data = parseInt($.trim(data));
 			if(data>0){
 				window.location.href='manager/index.jsp';

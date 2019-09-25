@@ -4,4 +4,31 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!-- 指定spring要加载的配置文件主要是bean对象的创建 -->
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:spring-bean.xml</param-value><!--  -->
+  </context-param>
+
+  	<!-- 配置IOC容器加载的监听器 -->
+	<!-- 配置DispatcherServlet -->
+	<listener>
+	  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <!-- 指定controller的扫描文件 -->
+            <param-value>classpath:springmvc.xml</param-value><!--  -->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+	<servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
