@@ -20,4 +20,14 @@ public class CustomerBizImpl implements ICustomerBiz {
 		return mapper.login(customer);
 	}
 
+	@Override
+	public int register(Customer po) throws Exception {
+		return mapper.register(po);
+	}
+
+	@Override
+	public int update(Customer po) throws Exception {
+		return mapper.update(po);
+	}
+
 }

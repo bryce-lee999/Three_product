@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="../../images/copylogo.png" type="image/x-icon" />
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/main.css">
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+<div id="table" class="mt10">
+	<div class="box span10 oh">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="list_table">
+			<thead>
+				<tr>
+					<th width="105">管理员编号</th>
+                   	<th width="225">管理员名称</th>
+                  	<th width="125">管理员状态</th>
+                   	<th width="145">权限</th>
+                   	<th width="120">操作</th>
+                </tr>
+             </thead>
+             <tbody id="news_info" align="center">
+
+             </tbody>
+		</table>
+
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+//获取所有管理员信息
+		$.post("../../admin/findAll",null,function(data){
+			showAdmin(data);
+		});
+
+		function showAdmin(data){
+			console.log(data);
+			var str = '';
+			$.each(data,function(index,item){
+				str += '<tr><td>'+item.coid+'</td>'
+					+'<td>'+item.coname+'</td>'
+					+'<td>'+item.costatus+'</td>'
+					+'<td>'+item.colevel+'</td>'
+					+'<td><a href="javascript:changeStatus('+item.coid+')">[修改账号状态]</a>&nbsp;&nbsp;</td>';
+			});
+			$('#news_info').html('').append(str);
+		}
+
+		//修改账号状态
+		function changeStatus(coid){
+			$.post("../../admin/changeStatus",{coid:coid},function(data){
+				data = parseInt($.trim(data));
+				if(data>0){
+					window.location.reload();
+				}else{
+					alert("拒绝访问...")
+				}
+			});
+		}
+</script>
+</html>

@@ -26,4 +26,12 @@ public class CustomerController {
 		return 1;
 	}
 
+	@RequestMapping("/register")
+	@ResponseBody
+	public int register(Customer customer,HttpSession session) throws Exception {
+		int info = biz.register(customer);
+		if(info==0) return 0;
+		return info;
+	}
+
 }

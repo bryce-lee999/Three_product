@@ -5,5 +5,14 @@
 
 <!-- 对应接口的全路径 -->
 <mapper namespace="com.yc.dao.FavoritesMapper">
+	<!-- public int addCart(Favorites favorite); -->
+	<insert id="addCart" parameterType="Favorites">
+		insert into favorites values(null,#{cno},#{gno},#{fnum},now(),null,null)
+	</insert>
+
+	<!-- public List<Cart> getFavorite(Integer cno); -->
+	<select id="getFavorite" parameterType="Integer" resultType="Cart">
+		select fid,cno,favorites.gno,gname,tino,gprice,gnum,gimg,fnum from favorites,goods where favorites.gno = goods.gno and cno = #{cno}
+	</select>
 
 </mapper>

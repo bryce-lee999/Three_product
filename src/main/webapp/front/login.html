@@ -70,12 +70,15 @@
                 var user_name = $('[name=user_name]').val();
                 var user_pwd = $('[name=user_pwd]').val();
                 //post提交
-                ajaxPost('../customer/login',{cname:user_name,pwd:user_pwd},function (status) {
-                    //如果登陆失败
-                    if(status != 1){
-                        $('#loginBtn').html('登陆').attr('disabled',false);
+                $.post('../customer/login',{cname:user_name,pwd:user_pwd},function (data) {
+                    console.log(data);
+                    if(data == 1){
+                    	window.location.href='../index.jsp';
+                    }else {
+                    	//如果登陆失败
+                    	alert("密码错误");
+                    	$('#loginBtn').html('登陆').attr('disabled',false);
                     }
-                    window.location.href='../index.html';
                 });
             })
 

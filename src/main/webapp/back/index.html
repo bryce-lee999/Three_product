@@ -24,6 +24,7 @@
 		//注意发送请求得到路径http://localhost:8080/product/admin/login
 		$.post("../admin/login",{coname:account,copwd:pwd},function(data){
 			data = parseInt($.trim(data));
+			console.log(data);
 			if(data>0){
 				window.location.href='manager/index.jsp';
 			}else{

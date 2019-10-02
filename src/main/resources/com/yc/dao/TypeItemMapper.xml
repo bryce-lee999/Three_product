@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 对应接口的全路径 -->
 <mapper namespace="com.yc.dao.TypeItemMapper">
+
+	<!-- public List<TypeItem> findAll() throws Exception; -->
+	<!-- 查找所有子类型 -->
+	<select id="findAll" resultType="TypeItem">
+		select
+			<include refid="typeiteminfo" />
+		from typeitem
+	</select>
+
+	<!-- public TypeItem findByTino(Integer tino) throws Exception; -->
+	<!-- 通过主键查找 -->
+	<select id="findByTino" parameterType="integer" resultType="TypeItem">
+		select
+			<include refid="typeiteminfo" />
+		from typeitem where tino = #{tino}
+	</select>
+
+	<!-- public List<TypeItem> findByTiname(String tiname) throws Exception -->
+	<!-- 通过名称模糊查询 -->
+	<select id="findByTiname" parameterType="string" resultType="TypeItem">
+		<bind name="tiname_like" value="'%'+_parameter+'%'"/>
+		select
+			<include refid="typeiteminfo" />
+		from typeitem where tiname like #{tiname_like}
+	</select>
+
+	<!-- public List<TypeItem> findByTno(Integer tno) throws Exception -->
+	<!-- 通过父类型查找 -->
+	<select id="findByTno" parameterType="integer" resultType="TypeItem">
+		select
+			<include refid="typeiteminfo" />
+		from typeitem where tno = #{tno}
+	</select>
+
+	<!-- public List<TypeItem> findByPO(TypeItem typeItem) throws Exception; -->
+	<!-- 通过PO对象查找商品类型 -->
+	<select id="findByPO" parameterType="typeItem" resultType="TypeItem">
+	<bind name="tiname_like" value="'%'+_parameter.tiname+'%'"/>
+		select
+			<include refid="typeiteminfo" />
+		from typeitem
+		<where>
+			<if test="tino!=null">
+				and tino = #{tino}
+			</if>
+			<if test="tiname!=null and tiname!=&quot;&quot;">
+				and tiname like #{tiname_like}
+			</if>
+			<if test="tno!=null">
+				and tno = #{tno}
+			</if>
+		</where>
+	</select>
+
+
+
+
+
+	<sql id="typeiteminfo">
+		tino,tiname,tno
+	</sql>
 
 </mapper>

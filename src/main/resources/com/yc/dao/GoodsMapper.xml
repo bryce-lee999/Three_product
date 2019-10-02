@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 对应接口的全路径 -->
+
 <mapper namespace="com.yc.dao.GoodsMapper">
 
+	<!-- public List<Goods> findAll() throws Exception  -->
+	<!-- 查找所有商品 -->
+	<select id="findAll"  resultType="goods">
+		select
+			<include refid="goodsinfo" />
+		from goods
+	</select>
+
+	<!-- public List<Goods> findByTino(int[] tinos) throws Exception; -->
+	<!-- tino 查找商品 -->
+	<select id="findByTino" resultType="goods" parameterType="java.util.ArrayList">
+		select
+		<include refid="goodsinfo" />
+		from goods where tino in
+		<foreach collection="array" open="(" close=")" separator="," item="tino">
+			#{tino}
+		</foreach>
+	</select>
+
+	<!-- public List<Goods> findByName(String name)throws Exception; -->
+	<!-- 通过商品名模糊查询查找 -->
+	<select id="findByName" parameterType="string" resultType="goods">
+		<bind name="goods_like" value="'%'+_parameter+'%'"/>
+		select
+			<include refid="goodsinfo" />
+		 from goods where gname like #{goods_like}
+	</select>
+
+	<!-- public Goods findByGno(Integer gno) throws Exception; -->
+	<select id="findByGno" resultType="goods">
+		select
+			<include refid="goodsinfo" />
+		 from goods where gno = #{gno}
+	</select>
+
+
+	<!-- public List<Goods> findByType(int tino,int page,int rows); -->
+	<!-- 分页显示 -->
+	<select id="findByType" parameterType="int" resultType="Goods">
+		select gno,gname,tino,gprice,gnum,gimg,gdescribe from goods order by gno limit #{page},#{rows}
+	</select>
+
+	<!--public int addGoods(Goods goods)throws Exception; -->
+	<!-- 插入商品 -->
+	<insert id="addGoods" parameterType="goods">
+		insert into goods(gname,tino,gprice,gnum,gimg,gdescribe)
+			values(#{gname},#{tino},#{gprice},#{gnum},#{gimg},#{gdescribe})
+	</insert>
+
+	<!-- public int delGoods(Integer gno) throws Exception; -->
+	<!-- 删除商品 -->
+	<delete id="delGoods" >
+		delete from goods where gno = #{gno}
+	</delete>
+
+	<!-- public int purchase(Goods goods) throws Exception; -->
+	<!-- 购买商品 -->
+	<update id="purchase" parameterType="goods">
+		update goods set gnum = gnum - #{gnum} where gno = #{gno}
+	</update>
+
+	<!-- public int update(Goods goods) throws Exception; -->
+	<!-- 修改商品信息 -->
+	<update id="update" parameterType="goods">
+		update  goods set
+		<trim prefixOverrides="and">
+			<if test="gname!=null and gname!=&quot;&quot;">
+				and gname = #{gname}
+			</if>
+			<if test="tino!=null">
+				and tino = #{tino}
+			</if>
+			<if test="gprice!=null">
+				and gprice = #{gprice}
+			</if>
+			<if test="gnum!=null">
+				and gnum = #{gnum}
+			</if>
+			<if test="gimg!=null and gimg!=&quot;&quot;">
+				and gimg = #{gimg}
+			</if>
+			<if test="gdescribe!=null and gdescribe!=&quot;&quot;">
+				and gdescribe = #{gdescribe}
+			</if>
+		</trim>
+		where gno = #{gno}
+	</update>
+
+
+
+
+
+
+	<!-- 查找信息 -->
+	<sql id="goodsinfo">
+		gno,gname,tino,gprice,gnum,gimg,gdescribe
+	</sql>
 </mapper>
+

@@ -9,6 +9,11 @@
   	<param-name>contextConfigLocation</param-name>
   	<param-value>classpath:spring-bean.xml</param-value><!--  -->
   </context-param>
+	<!-- 图片上传后的保存路径 -->
+	<context-param>
+	  	<param-name>uploadPath</param-name>
+	  	<param-value>pics</param-value><!--  -->
+	</context-param>
 
   	<!-- 配置IOC容器加载的监听器 -->
 	<!-- 配置DispatcherServlet -->
@@ -16,6 +21,7 @@
 	  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<!-- springmvc配置 -->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

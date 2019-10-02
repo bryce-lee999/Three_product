@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>订单结算--当当网</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link href="//pcheckout.ddimg.cn/resources/styles/style.css?v=201909240039" rel="stylesheet" type="text/css" />
+	<link href="//pcheckout.ddimg.cn/resources/styles/dev.css?v=201909240039" rel="stylesheet" type="text/css" />
+	<link href="//pcheckout.ddimg.cn/resources/styles/iconfont.css?v=201909240039" rel="stylesheet" type="text/css" />
+	<link href="//static.dangdang.com/css/header2012/header_960_150611.css?20180907" rel="stylesheet" type="text/css">
+	<link href="//static.dangdang.com/css/header2012/footer_140522.css?20180907" rel="stylesheet" type="text/css" />
+	<script charset="gb2312" type="text/javascript">var width = 0; narrow = 1;</script>
+	<script src="//static.dangdang.com/js/header2012/pagetop2015_0827.js?20180907" charset="gb2312" type="text/javascript"></script>
+	<script src="//static.dangdang.com/js/header2012/dd.menu-aim.js?20180907" charset="gb2312" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="hd">
+<div id="tools">
+<div class="tools">
+    <div class="ddnewhead_operate" dd_name="顶链接">
+        <ul class="ddnewhead_operate_nav">
+        <li class="ddnewhead_cart"><a href="javascript:AddToShoppingCart(0);" name="购物车" dd_name="购物车"><i class="icon_card"></i>购物车<b id="cart_items_count"></b></a></li>
+        <li><a target="_blank" href="http://myhome.dangdang.com/myOrder" name="我的订单" dd_name="我的订单" rel="nofollow">我的订单<b id="unpaid_num" style="color:#ff2832;font:bold 12px Arial;"></b></a></li>
+        <li><a target="_blank" href="http://e.dangdang.com/ebook/listUserEbooks.do" name="我的云书房" dd_name="我的云书房">我的云书房</a></li>
+        <li class="my_dd"><a class="menu_btn" target="_blank" href="http://myhome.dangdang.com/" name="我的当当" dd_name="我的当当" id="a_myddchannel" onmouseover="showgaoji('a_myddchannel','__ddnav_mydd')" onmouseout="hideotherchannel('a_myddchannel','__ddnav_mydd');">我的当当</a>
+            <ul class="ddnewhead_gcard_list" id="__ddnav_mydd" onmouseover="showgaoji('a_myddchannel','__ddnav_mydd')" onmouseout="hideotherchannel('a_myddchannel','__ddnav_mydd');">
+                <li><a target="_blank" href="http://myhome.dangdang.com/myOrder" name="mydd_7" dd_name="新_我的订单">我的订单</a></li>
+               <li><a target="_blank" href="http://shopping.dangdang.com/shoppingcart/shopping_cart.aspx" name="mydd_8" dd_name="新_购物车" rel="nofollow">购物车</a></li>
+                <li><a target="_blank" href="http://myhome.dangdang.com/mypoint?ref=my-0-L" name="mydd_4" dd_name="我的银铃铛" rel="nofollow">银铃铛抵现</a></li>
+                <li><a target="_blank" href="http://myhome.dangdang.com/myFavorite" name="mydd_1" dd_name="我的收藏" rel="nofollow">我的收藏</a></li>
+                <li><a target="_blank" href="http://noncash.dangdang.com/balance/" name="mydd_5" dd_name="我的余额" rel="nofollow">我的余额</a></li>
+                <li><a target="_blank" href="http://comment.dangdang.com/comment" name="mydd_4" dd_name="我的评论" rel="nofollow">我的评论</a></li>
+                <li><a target="_blank" href="http://newaccount.dangdang.com/payhistory/mycoupon.aspx" name="mydd_2" dd_name="礼券/礼品卡" rel="nofollow">礼券/礼品卡</a></li>
+            </ul>
+        </li>
+        <li class="pc_mina"><a class="menu_btn" target="_blank" href="http://t.dangdang.com/freetry_list" name="0元领物" dd_name="0元领物" id="a_minachannel" onmouseover="showgaoji('a_minachannel','__ddnav_mina')" onmouseout="hideotherchannel('a_minachannel','__ddnav_mina');">0元领物</a>
+            <ul class="ddnewhead_gcard_list" id="__ddnav_mina" onmouseover="showgaoji('a_minachannel','__ddnav_mina')" onmouseout="hideotherchannel('a_minachannel','__ddnav_mina');">
+                <li><a target="_blank" href="http://t.dangdang.com/freetry_list" name="mina_1" dd_name="0元领物" rel="nofollow">0元领物</a></li>
+                <li><a target="_blank" href="http://t.dangdang.com/pintuan_list" name="mina_2" dd_name="当当拼团" rel="nofollow">当当拼团</a></li>
+                <li><a target="_blank" href="http://t.dangdang.com/kanjia_list" name="mina_3" dd_name="1元砍价" rel="nofollow">1元砍价</a></li>
+                <li><a target="_blank" href="http://t.dangdang.com/choujiang_list" name="mina_4" dd_name="1分抽奖" rel="nofollow">1分抽奖</a></li>
+            </ul>
+        </li>
+	<li><a target="_blank" href="http://e.dangdang.com/media/h5/pc/zhuangti/zhengwen2017/essay.html" name="mydd_7" dd_name="小说投稿">小说投稿</a></li>
+	<li><a target="_blank" href="http://pbook-shequ.dangdang.com/welcome/"  dd_name="我要出书">我要出书</a></li>
+        <li><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="qycg" dd_name="企业采购" id="a_qycgchannel" onmouseover="showgaoji('a_qycgchannel','__ddnav_qycg');" onmouseout="hideotherchannel('a_qycgchannel','__ddnav_qycg');">企业采购</a>
+            <ul class="ddnewhead_gcard_list" id="__ddnav_qycg" onmouseover="showgaoji('a_qycgchannel','__ddnav_qycg');" onmouseout="hideotherchannel('a_qycgchannel','__ddnav_qycg');">
+                <li><a target="_blank" href="http://giftcard.dangdang.com/giftcardCompany" name="qycg_1" dd_name="大宗采购">大宗采购</a></li>
+                <li><a target="_blank" href="http://giftcard.dangdang.com/" name="qycg_2" dd_name="礼品卡采购">礼品卡采购</a></li>
+                <li><a target="_blank" href="http://account.dangdang.com/payhistory/mymoney.aspx" name="gqycg_3" dd_name="礼品卡激活" rel="nofollow">礼品卡激活</a></li>
+                <li><a target="_blank" href="http://help.dangdang.com/details/page24" name="qycg_4" dd_name="礼品卡使用">礼品卡使用</a></li>
+				<li><a target="_blank" href="http://giftcard.dangdang.com/goods?type=mall" name="qycg_6" dd_name="礼品卡专区">礼品卡专区</a></li>
+            </ul>
+        </li>
+        <li class="hover "><a class="menu_btn" href="javascript:void(0);" style="cursor:default;" name="ddkf_0" dd_name="客户服务" id="a_bzzxchannel" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">客户服务</a>
+            <ul class="ddnewhead_gcard_list" id="__ddnav_bzzx" onmouseover="showgaoji('a_bzzxchannel','__ddnav_bzzx');" onmouseout="hideotherchannel('a_bzzxchannel','__ddnav_bzzx');">
+                <li><a target="_blank" href="http://help.dangdang.com/index" name="ddkf_2" dd_name="帮助中心">帮助中心</a></li>
+		<li><a target="_blank" href="http://return.dangdang.com/reverseapplyselect.aspx" name="ddkf_3" dd_name="自助退换货">自助退换货</a></li>
+               <li><a target="_blank" href="http://order.dangdang.com/InvoiceApply/InvoiceOnlineReissue.aspx" name="tsjy_2" dd_name="自助发票" rel="nofollow">自助发票</a></li>
+                <li><a target="_blank" href="http://help.dangdang.com/details/page206" name="ddkf_4" dd_name="联系客服">联系客服</a></li>
+                <li><a target="_blank" href="http://help.dangdang.com/details/page206" name="tsjy_1" dd_name="我要投诉" rel="nofollow">我要投诉</a></li>
+            </ul>
+        </li>
+        </ul>
+        <div class="ddnewhead_welcome" display="none;">
+            <span id="nickname"><span class="hi hi_none">欢迎光临当当，请</span><a href="https://login.dangdang.com/signin.aspx?returnurl=http%3A//www.dangdang.com/" class="login_link">登录</a><a href="https://login.dangdang.com/Register.aspx">免费注册</a></span>
+            <div class="tel_pop" style="display:none" id="__ddnav_sjdd"  onmouseover="showgaoji('a_phonechannel','__ddnav_sjdd');" onmouseout="hideotherchannel('a_phonechannel','__ddnav_sjdd');">
+                <a target="_blank" href="http://t.dangdang.com/20130220_ydmr" class="title"><i class="icon_tel"></i>手机当当</a><i class="title_shadow"></i>
+                <ul class="tel_pop_box">
+                    <li><a href="http://t.dangdang.com/20130220_ydmr" dd_name="手机二维码"><span>当当手机客户端</span><img src="//img3.ddimg.cn/00363/doc/erweima2.png"><span class="text">随手查订单<br>随时享优惠</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="new_head_znx" id="znx_content" style="display:none;"></div>
+    </div>
+</div>
+</div>
+<div id="header_end"></div>
+<!--CreateDate  2019-09-28 03:00:01--></div>
+<form  id="bootpagetopSearch" name="bootpagetopSearch" method="get"></form>
+<script type="text/javascript">var nick_num = 0;initHeaderOperate();</script>
+	<div class="logo_line">
+		<div class="w960">
+			<div class="shopping_procedure"><span><a href="cart/cart.html">我的购物车</a></span><span class="current">填写订单</span><span>完成订单</span></div>
+			<div class="logo"><a href="index.jsp"><img src="//pcheckout.ddimg.cn/resources/images/dd_logo.png?v=201909240039" alt=""/></a></div>
+		</div>
+	</div>
+
+	<!-- 主体部分 -->
+	<div class="w960" style="min-height:650px;">
+	    <div id="div_checkout_tips" class="checkout_tip" style=""><span class="icon_tip"></span>
+			<b>温馨提示：</b>
+			<div class="con"><p>当当平台及销售商不会以任何理由，要求您点击任何网址链接进行退款或支付操作。</p></div>
+		</div>
+		<!--收货人信息-->
+		<div id="address_div" class="address" style="display: block;"><h1 class="title">收货人信息</h1>
+			<div class="addr_list" id="address_content">
+				<ul>
+					<li onclick="setAddr(this.id)" class="addr active" id="address_block_304725306" address_index="0" address_id="304725306" address_status="2">
+						<h1>啊啊啊<span>157****3278</span></h1>
+						<p>中国 江西 九江市 彭泽县 马垱镇</p>
+						<p>**乡</p>
+						<div id="defalut_304725306" style="display: block;">
+							<span class="addr_mo"><em></em>默认地址</span>
+						</div>
+						<div id="oper_304725306" style="display: none;">
+							<a href="javascript:void(0)" id="edit_304725306" name="oper">编辑</a>
+							<a href="javascript:void(0)" id="del_304725306" name="oper" style="display: none;">删除 </a>
+							<a href="javascript:void(0)" id="set_default_304725306" class="us" name="oper">设为默认地址</a>
+						</div>
+					</li>
+
+					<li onclick="setAddr(this.id)" class="addr " id="address_block_3047253061" address_index="0" address_id="3047253061" address_status="2">
+						<h1>啊啊啊<span>157****3278</span></h1>
+						<p>中国 江西 九江市 彭泽县 马垱镇</p>
+						<p>**乡</p>
+						<div id="defalut_3047253061" style="display: block;">
+							<span class="addr_mo"><em></em>默认地址</span>
+						</div>
+						<div id="oper_3047253061" style="display: none;">
+							<a href="javascript:void(0)" id="edit_3047253061" name="oper">编辑</a>
+							<a href="javascript:void(0)" id="del_3047253061" name="oper" style="display: none;">删除 </a>
+							<a href="javascript:void(0)" id="set_default_3047253061" class="us" name="oper">设为默认地址</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<p><a href="javascript:void(0)" class="btn" id="btn_show_more_address" style="display: none;">展开地址<em class="bicon a_d"></em></a>
+			<a href="javascript:void(0)" class="btn" id="btn_add_address">新增收货地址<em class="bicon"></em></a></p>
+		</div>
+		<!--配送方式-->
+		<div id="shipments_div" class="w960">
+		<h1 class="title"><a href="http://shopping.dangdang.com/shoppingcart/shopping_cart.aspx" class="fr modify">返回购物车</a>送货清单</h1>
+		<div class="shipping">
+			<div id="shipment_0_0_div">
+				<div class="title"><span class="icon"></span>当当网</div>
+				<div class="ship_box">
+					<div class="main">
+						<!-- 送货模块 -->
+						<div class="left" id="delivery_0_0"><a href="#shipmentAnchor_0_0" name="shipmentAnchor_0_0" id="shipmentAnchor_0_0"></a>
+							<p class="method_tip red" style="color:black;"><span class="icon_tip_s" style="display:none;"></span>请选择配送方式</p>
+							<div id="divDeliveryMethod_0_0">
+								<ul class="method">
+									<li><a id="methed_id_1" class="current" href="javascript:void(0);">当当快递</a></li>
+									<li><a id="methed_id_20" href="javascript:void(0);">顺丰快递</a></li>
+								</ul>
+							</div>
+							<div id="divDeliveryTime_0_0" class="time" style="position: static;">配送时间&nbsp;&nbsp;
+								<select id="sltDeliveryTime_0_0">
+									<option value="1">只工作日送货</option>
+									<option value="2">只双休日、假日送货</option>
+									<option selected="selected" value="3">时间不限</option>
+								</select>
+							</div>
+							<div id="divPromise_0_0" class="time" style="position: static;">
+								<span class="red">09</span>月
+								<span class="red">28</span>日
+								<span class="red">19:55</span>前付款，预计
+								<span class="red">09</span>月
+								<span class="red">30</span>日（
+								<span class="red">周一</span>） 送达<a id="btnModify_0_0" href="javascript:void(0);" class="modify">修改</a>
+								<div id="divBar_0_0" style="height:1px;"></div>
+								<div id="divReservedDelivery_0_0" style="display:none; z-index:9999;"></div>
+							</div>
+							<div id="divSelfPick" style="display:none;"></div>
+							<div id="divCargoSplit_0_0" style="display:none;"></div>
+						</div>
+						<!-- 订单商品列表 -->
+						<div id="order_0_0_div" class="right clearfix"><!-- 定金预售订单 -->
+							<!-- 普通订单 -->
+							<div class="subpackage_title">
+								以下商品
+								预计
+								<span class="red">2019</span>年
+								<span class="red">9</span>月
+								<span class="red">30</span>日送达
+								<span class="charge">运费:6.00</span>
+							</div>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+								<tbody>
+									<tr>
+										<th scope="col" class="th_img">&nbsp;</th>
+										<th scope="col" class="th_name">商品名称</th>
+										<th scope="col">单价</th>
+										<th scope="col">数量</th>
+										<th scope="col">总价</th>
+									</tr>
+									<!-- 普通商品 -->
+									<tr id="27911908_NOTGIFT" ddt-data-key="productid" ddt-data="27911908">
+										<td class="img">
+											<img src="//img3m8.ddimg.cn/46/33/27911908-1_t_6.jpg" width="70" height="70">
+										</td>
+										<td class="name">
+											<a href="http://product.dangdang.com/27911908.html" title="你要好好的（苑子文沉淀两年2019年全新个人作品集，当当独家签名）" target="_blank" dd_name="查看详情" style="word-break:break-all;  word-wrap:break-word;">你要好好的（苑子文沉淀两年2019年全新个人作品集，当当独家签名）</a>
+												<p class="seven">
+												<span class="icon_7"></span>支持7天无理由退换货
+												</p>
+										</td>
+										<td>46.80</td>
+										<td>1
+										</td>
+										<td>
+											46.80
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div id="shipment_sub_0_0_div" class="sub">
+						<div class="sub_left">
+							<div id="giftPacking" style="">
+								<p><a href="javascript:void(0)" class="check" id="giftPacking_check"></a>包装升级<a class="modify" id="giftPacking_edit" href="javascript:void(0)" style="display:none">修改</a></p>
+							</div>
+						</div>
+						<div class="sub_right">
+							<p><span class="red">1</span>个包裹
+							<span class="tab">商品金额：46.80</span>
+							<span class="tab">运费：6.00</span>
+							<span class="tab"></span></p>
+							<p><span class="tab">店铺合计：</span><span class="price red">52.80</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--支付方式-->
+	<div id="payment_div" class="w960">
+	<h1 class="title">支付方式</h1>
+	<div id="payment_inner_div" class="payment new_payment">
+	<ul class="ul_list clearfix">
+		<li style="display:none" class="aa">
+			<a href="javascript:void(0)" class="btn_pay " id="payment_noncash">非现金支付</a>
+		</li>
+		<li style="display: block" class="aa">
+			<a href="javascript:void(0)" class="btn_pay  current" id="payment_online">网上支付</a>
+		</li>
+		<li style="z-index:5;" class="aa">
+    		<a id="payment_after_arrival" href="javascript:void(0)" class="btn_pay  ">货到付款<span></span>
+            	<i class="icon iconfont icon-jiantouxi-xiafang"></i>
+            	<i id="paa_disabled" class="icon iconfont icon-tanhao-"></i>
+			</a>
+		    <div id="ppa_div" class="drop_list" style="display: none;">
+		        <div class="tips">请选择货到付款方式</div>
+		        <div class="list">
+		            <ul>
+		                <li id="payment_in_cash_after_arrival" class="">现金</li>
+		                <li id="payment_with_pos_after_arrival" class="disabled">POS刷卡</li>
+		                <li id="payment_with_alipay_after_arrival" class="disabled">支付宝扫码</li>
+		            </ul>
+		        </div>
+		    </div>
+		</li>
+		<li class="aa" style="display: block">
+			<a href="javascript:void(0)" class="btn_pay  " id="payment_banking">银行转账</a>
+		</li>
+		<li class="aa" style="display: block">
+			<a href="javascript:void(0)" class="btn_pay  " id="payment_by_other">他人代付</a>
+		</li>
+		<li class="aa" style="display: none">
+			<a href="javascript:void(0)" class="btn_pay disabled " id="payment_foreign_credit_card">国外信用卡</a>
+		</li>
+	</ul>
+</div></div>
+		<!--分期付款-->
+		<div id="installment_bank_div" class="w960"></div>
+		<div id="installment_nper_div" class="w960"></div>
+		<!--小计-->
+		<div id="summary_div"><div class="total">
+			<div>
+				<div class="border">
+					<p><span class="name">商品金额：</span><span class="price">46.80</span></p>
+					<p><span class="name">运费：</span><span class="price">6.00</span></p>
+				</div>
+			</div>
+			<p class="total_price"><span class="name">应付金额：</span><span class="price red">52.80</span></p>
+			<div class="confirm">
+				<p><span class="big">寄送至：</span>
+				<span id="address_summary">中国 江西 九江市 彭泽县 马垱镇 **乡</span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="name_phone_summary">啊啊啊 157****3278</span></p>
+				<p>当当自营商品预计<span class="red">2019</span>年
+				<span class="red">09</span>月
+				<span class="red">30</span>日（
+				<span class="red">周一</span>）送达</p>
+			</div>
+		</div></div>
+	</div>
+
+	<!-- 点击支付 -->
+	<div id="submit_div"><div id="submit_div_inner" class="submit">
+		<div class="box tip_tuan">
+			共<span class="red">1</span>件商品
+			<span class="price">应付金额：<span class="red">52.80</span></span>
+				(含运费<span class="red">6.00</span>元)
+			<a id="submit" href="javascript:void(0)" class="btn_red">去支付</a>
+			<p>热销品订单请在 <strong>1天</strong> 内完成支付</p>
+		</div>
+	</div>
+	<div id="limit_products_div" style="display:none"><div class="pop">
+	<a href="javascript:void(0);" onclick="javascript:limitProductsDivClose($(this).parent());" class="close"></a>
+	<div class="pop_title">商品限购</div>
+	<div class="popup_limit"></div>
+	<div class="btn_bar limit_bar">
+		<a href="javascript:void(0);" id="btn_go_product_detail" onclick="javascript:backProductDetail();" class="btn_red">返回单品页修改数量</a>
+		<a href="javascript:void(0);" onclick="javascript:limitProductsDivClose($(this).parent().parent());" class="btn">取消</a>
+	</div>
+	</div></div>
+	</div>
+
+	<!-- 新增收货地址 -->
+	<div id="divDialog" style="display:none; left: 378.5px; top: 108.5px;"><div class="pop">
+		<div class="pop_title">
+			新增收货地址
+		</div>
+		<div class="pop_con">
+
+				<form action="" method="" class="info_list">
+				<ul>
+					<li><span class="name">收货人</span>
+						<input name="" type="text" id="txt_ship_name_edit" value="" maxlength="25">
+						<div class="alart_tip" style="display:none;" id="span_ship_name_valid_msg_edit"><span class="hide"></span>请填写收货人姓名 </div>
+						<div class="alart_tip" style="display:none;" id="span_ship_name_valid_msg_edit_eng"><span class="hide"></span>请用英文填写收货人姓名 </div>
+						<div class="alart_tip" style="display:none;" id="span_ship_name_valid_msg_charac_frobid"><span class="hide"></span>收货人姓名不能使用非法字符 </div>
+					</li>
+					<li><span class="name">手机号码</span>
+						<input name="" type="text" id="txt_ship_mb_edit" value="" onfocus="if(value == defaultValue){value='';}" maxlength="20">
+						<input name="" type="text" id="txt_ship_tel_edit" value="" onfocus="if(value == defaultValue){value='';}" maxlength="20" style="display: none">
+						<div class="alart_tip" style="display:none;" id="span_ship_mb_valid_msg_edit"><span class="hide"></span>请正确填写手机号码</div>
+						<div class="alart_tip" style="display:none;" id="MSG_PDDMONEY_SHIP_TEL_EMPTY"><span class="hide"></span>请填写移动电话，礼品卡激活信息将会在订单交易成功后发送到此号码上</div></li>
+					<li><span class="name">详细地址</span>
+						<input name="" type="text" style="width:413px;" id="txt_ship_address_edit" value="" maxlength="150">
+						<div class="alart_tip" style="display:none;" id="span_ship_address_valid_msg_edit"><span class="hide"></span>请填写详细的街道地址，要求3个汉字或以上</div>
+						<div class="alart_tip" style="display:none;" id="span_ship_address_valid_msg_edit_eng"><span class="hide"></span>请用英文填写详细地址信息，至少五个字母</div>
+						<div class="alart_tip" style="display:none;" id="span_ship_address_valid_msg_charac_frobid"><span class="hide"></span>收货人详细地址不能使用非法字符 </div>
+						<div class="alart_tip" style="display:none;" id="span_ship_address_valid_msg_length_forbid"><span class="hide"></span>详细地址不可超过50个汉字或字符</div>
+						<ul id="ul_ship_address_prompt_edit" class="drop_tip" style="width:423px;display:none;"></ul>
+					</li>
+				</ul>
+			</form>
+			<div class="btn_bar">
+			 	<a href="javascript:void(0)" id="submitAdd" class="btn_red">确认新增收货地址</a>
+				<a href="javascript:void(0)" id="cancelAdd" class="btn">取消</a>
+			</div>
+		</div>
+	</div></div>
+
+	<!-- 底部DIV -->
+	<div id="footer">
+		<div class="footer">
+			<div class="footer_nav_box">
+				<div class="footer_copyright"><span>Copyright (C) 当当网 2004-2014, All Rights Reserved</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001051000098" target="_blank" class="footer_img" rel="nofollow"><img src="//img60.ddimg.cn/upload_img/00459/index/validate.gif"></a><span><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证041189号</a></span><span>出版物经营许可证&nbsp;新出发京批字第直0673号</span></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$('#cancelAdd').click(function() {
+			console.log('关闭添加地址窗口');
+			$("#divDialog").css('display','none');
+		});
+
+		$('#btn_add_address').click(function() {
+			console.log('打开添加地址窗口');
+			$("#divDialog").css('display','block');
+		});
+
+		function setAddr(id){
+			$(".addr.active").attr("class","addr");
+			console.log('设置收货地址');
+			$("#"+id).attr("class","addr active");
+		}
+	</script>
+</body>
+
+
+</html>

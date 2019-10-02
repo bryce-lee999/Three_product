@@ -91,7 +91,7 @@ html {
 #logo {
 	width: 352px;
 	height: 81px;
-	background: url('../../images/logo02.png') no-repeat 10px 5px;
+	/*background: url('../images/logo2.png') no-repeat 10px 5px;*/
 	background-size: 216px 70px;
 }
 
@@ -143,7 +143,7 @@ html {
 }
 
 #base_info .help_info #out {
-	
+
 }
 
 #base_info .info_center {

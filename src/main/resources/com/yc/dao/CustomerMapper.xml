@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 对应接口的全路径 -->
 <mapper namespace="com.yc.dao.CustomerMapper">
 	<!-- public Customer login(Customer customer); -->
-	<select id="login" resultType="Customer">
-		select cno,cname,pwd,tel,addr,cphoto,ano,csex,ccodetype,ccodenumber,addition01 from customer where (cname=#{cname} or tel=#{cname}) and pwd=#{pwd}
+	<!-- 用户登录 -->
+	<select id="login"  resultType="customer" parameterType="customer">
+		select cno,cname,pwd,tel,addr,ano,csex from customer where (cname = #{cname} or tel = #{cname})
+			and pwd = #{pwd}
 	</select>
+
+	<!-- public int register(CustomerPO po) throws Exception; -->
+	<!-- 用户注册 -->
+	<insert id="register" parameterType="customer">
+		insert into customer(cname,pwd,tel,addr,ano,csex) values(#{cname},#{pwd},#{tel},#{addr},#{ano},#{csex})
+	</insert>
+
+	<!-- public int update(CustomerPO po) throws Exception; -->
+	<!-- 修改用户信息 -->
+	<update id="update" parameterType="customer">
+		update  customer set
+		<trim prefixOverrides="and">
+			<if test="cname!=null and cname!=&quot;&quot;">
+				and cname = #{cname}
+			</if>
+			<if test="pwd!=null and pwd!=&quot;&quot;">
+				and pwd = #{pwd}
+			</if>
+			<if test="tel!=null and tel!=&quot;&quot;">
+				and tel = #{tel}
+			</if>
+			<if test="addr!=null and addr!=&quot;&quot;">
+				and addr = #{addr}
+			</if>
+			<if test="csex!=null and csex!=&quot;&quot;">
+				and csex = #{csex}
+			</if>
+			<if test="ano!=null">
+				and ano = #{ano}
+			</if>
+		</trim>
+		where cno = #{cno}
+	</update>
 </mapper>

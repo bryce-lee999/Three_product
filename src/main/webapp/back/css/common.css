@@ -62,7 +62,7 @@ select{*vertical-align: top;}
 	border-top: 1px solid #c9c9c9;/*#e8f2f6*/
 	height: 24px;
 	line-height: 24px;
-	background: url('../images/bottom_bg.png') 0px 0px;
+	background: url('../back/images/bottom_bg.png') 0px 0px;
 	text-align: center;
 	color:#30A4F0;
 }
@@ -70,7 +70,6 @@ select{*vertical-align: top;}
 .copy {
 	color:#30A4F0;
 	text-decoration: none;
-	background: url("../../images/copylogo.png") no-repeat left center;
 	padding-left: 20px;
 }
 

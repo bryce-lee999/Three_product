@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- 对应接口的全路径 -->
 <mapper namespace="com.yc.dao.TypeMapper">
+	<!-- public List<Type> findAll() throws Exception; -->
+	<!-- 查找所有父类型 -->
+	<select id="findAll" resultType="Type">
+		select
+			<include refid="typeinfo" />
+		from type
+	</select>
 
+	<!-- public List<Type> findByName(String tname) throws Exception; -->
+	<!-- 按名字模糊查询 -->
+	<select id="findByName" parameterType="string" resultType="Type">
+		<bind name="type_like" value="'%'+_parameter+'%'"/>
+		select
+			<include refid="typeinfo" />
+		from type where tname like #{type_like}
+	</select>
+
+	<!-- public Type findByTno(Integer tno)throws Exception; -->
+	<!-- 通过编号查新父类型 -->
+	<select id="findByTno" parameterType="integer" resultType="Type">
+		select
+			<include refid="typeinfo" />
+		from type where tno = #{tno}
+	</select>
+
+	<!-- public List<Type> finds() throws Exception; -->
+	<select id="finds" resultType="Type">
+		select tno,tname from type order by tno
+	</select>
+
+	<sql id="typeinfo">
+		tno,tname,tdescription
+	</sql>
 </mapper>

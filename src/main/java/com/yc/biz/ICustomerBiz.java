@@ -10,4 +10,20 @@ public interface ICustomerBiz {
 	 * @return
 	 */
 	public Customer login(Customer customer);
+
+	/**
+	 * 用户注册
+	 * @param po
+	 * @return
+	 * @throws Exception
+	 */
+	public int register(Customer po) throws Exception;
+
+	/**
+	 * 更新用户信息
+	 * @param po
+	 * @return
+	 * @throws Exception
+	 */
+	public int update(Customer po) throws Exception;
 }

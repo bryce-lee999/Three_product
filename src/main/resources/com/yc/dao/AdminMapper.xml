@@ -7,4 +7,30 @@
 	<select id="login" resultType="Admin">
 		select coid,coname,copwd,costatus,colevel from controller where coname=#{coname} and copwd=#{copwd}
 	</select>
+
+	<!-- public List<Admin> findAll(); -->
+	<select id="findAll" resultType="Admin">
+		select coid,coname,copwd,costatus,colevel from controller
+	</select>
+
+	<!-- public Admin findOne(Integer coid); -->
+	<select id="findOne" resultType="Admin">
+		select coid,coname,copwd,costatus,colevel from controller where coid = #{coid}
+	</select>
+
+	<!-- public int add(Admin admin); -->
+	<insert id="add" parameterType="Admin">
+		insert into controller values(null,#{coname},#{copwd},1,3)
+	</insert>
+
+	 <!-- public int update(Integer coid); -->
+	 <update id="update">
+	 	update controller set copwd = 123456 where coid=#{coid}
+	 </update>
+
+	 <!-- public int changeStatus(Integer coid,Integer costatus); -->
+	 <update id="changeStatus">
+	 	update controller set costatus = #{costatus} where coid=#{coid}
+	 </update>
+
   </mapper>

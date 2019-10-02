@@ -8,9 +8,9 @@ public class Goods {
 	private Double gprice;//商品价格
 	private Integer gnum;//商品数量
 	private String gimg;//商品图片
-	private String addition01;//保留字段
+	private String gdescribe;//商品描述
 	private String addition02;//保留字段
-	public Goods(Integer gno, String gname, Integer tino, Double gprice, Integer gnum, String gimg, String addition01,
+	public Goods(Integer gno, String gname, Integer tino, Double gprice, Integer gnum, String gimg, String gdescribe,
 			String addition02) {
 		super();
 		this.gno = gno;
@@ -19,7 +19,7 @@ public class Goods {
 		this.gprice = gprice;
 		this.gnum = gnum;
 		this.gimg = gimg;
-		this.addition01 = addition01;
+		this.gdescribe = gdescribe;
 		this.addition02 = addition02;
 	}
 	public Goods() {
@@ -61,11 +61,11 @@ public class Goods {
 	public void setGimg(String gimg) {
 		this.gimg = gimg;
 	}
-	public String getAddition01() {
-		return addition01;
+	public String getGdescribe() {
+		return gdescribe;
 	}
-	public void setAddition01(String addition01) {
-		this.addition01 = addition01;
+	public void setGdescribe(String gdescribe) {
+		this.gdescribe = gdescribe;
 	}
 	public String getAddition02() {
 		return addition02;
@@ -76,7 +76,7 @@ public class Goods {
 	@Override
 	public String toString() {
 		return "Goods [gno=" + gno + ", gname=" + gname + ", tino=" + tino + ", gprice=" + gprice + ", gnum=" + gnum
-				+ ", gimg=" + gimg + ", addition01=" + addition01 + ", addition02=" + addition02 + "]";
+				+ ", gimg=" + gimg + ", gdescribe=" + gdescribe + ", addition02=" + addition02 + "]";
 	}
 
 

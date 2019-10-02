@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.yc.po.Admin" %>
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<%Admin admin = (Admin)session.getAttribute("loginAdmin"); %>
 <title>源辰-后台首页</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/common.css">
@@ -86,7 +88,7 @@
                     <a href="../index.html" id="out">&nbsp;</a>
                 </div>
                 <div class="info_center">
-                   源辰
+                   <%=admin.getConame() %>
                     <span id="nt">通知</span><span><a href="#" id="notice">3</a></span>
                 </div>
             </div>
@@ -103,18 +105,12 @@
         <ul>
             <li><a href="javascript:void(0)" onclick="showpage(this,'admin.html')">添加管理员</a></li>
             <li><a href="javascript:void(0)" onclick="showpage(this,'view_admin.html')">管理员信息</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'user.html')">会员信息</a></li>
         </ul>
         <h3>商品信息</h3>
         <ul>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'type.html')">商品类型管理</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'goods.html')">商品信息管理</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'type.html')">商品类型浏览</a></li>
+            <li><a href="javascript:void(0)" onclick="showpage(this,'goods.html')">添加商品信息</a></li>
             <li><a href="javascript:void(0)" onclick="showpage(this,'view.html')">商品信息浏览</a></li>
-        </ul>
-        <h3>个人中信息</h3>
-        <ul>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/add_news.html')">个人信息</a></li>
-            <li><a href="javascript:void(0)" onclick="showpage(this,'page/view_news.html')">修改密码</a></li>
         </ul>
     </div>
 </div>

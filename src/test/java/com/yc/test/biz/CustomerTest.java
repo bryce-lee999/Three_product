@@ -24,4 +24,31 @@ public class CustomerTest {
 		System.out.println(biz.login(customer));
 	}
 
+	@Test
+	public void testRegister() {
+		//insert into customer(cname,pwd,tel,addr,ano,csex)
+		//values(#{cname},#{pwd},#{tel},#{addr},#{ano},#{csex})
+		Customer customer = new Customer();
+		customer.setCname("test002");
+		customer.setPwd("a");
+		customer.setTel("14789632456");
+		customer.setAddr("江西省九江市彭泽县");
+		customer.setCsex("女");
+		customer.setCcodetype("身份证");
+		customer.setCcodenumber("360430199901011234");
+		try {
+			System.out.println(biz.register(customer));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testUpdate() throws Exception {
+		Customer customer = new Customer();
+		customer.setCno(2);
+		customer.setPwd("b");
+		System.out.println(biz.update(customer));
+	}
 }
